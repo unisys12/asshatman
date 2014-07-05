@@ -1,0 +1,25 @@
+{
+	"name": "phillipjackson/asshatman",
+	"description": "Simple project to teach myself TDD and a good excuse to build a asset management package using PHP. Not to be used in a real project.",
+	"license": "WTFPL",
+	"keywords": [
+		"asset management",
+		"css",
+		"js",
+		"images"
+	],
+	"authors": [
+		{
+			"name": "Phillip Jackson",
+			"email": "unisys12@gmail.com",
+			"homepage": "blog-unisys12.rhcloud.com"
+		}
+	],
+	"require": {},
+	"require-dev": {},
+	"autoload": {
+		"psr-4": {
+			"PhillipJackson\\AssHatMan\\": "src/"
+		}
+	}
+}
