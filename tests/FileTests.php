@@ -33,7 +33,7 @@ class FileTests extends PHPUnit_Framework_TestCase{
 
 		$dir = new File($filetocheck);
 		$checkforname = $dir->getFileNames();
-		$this->assertContains('testcss.css', $checkforname);
+		$this->assertEquals('testcss.css', $checkforname);
 	}
 
 }

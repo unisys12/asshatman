@@ -19,7 +19,11 @@ class File {
 
 	public function getFileNames()
 	{
-		return $this->directoryList();
-	}	
+		$list = $this->directoryList();
+
+		foreach ($list as $key => $value) {
+			return $value;
+		}
+	}
 
 }
