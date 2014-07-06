@@ -1,4 +1,4 @@
-<?php namespace PhillipJackson\AssHatMan\File;
+<?php namespace PhillipJackson\AssHatMan;
 
 class File {
 
