@@ -21,8 +21,8 @@ class File {
 	{
 		$list = $this->directoryList();
 
-		foreach ($list as $key => $value) {
-			return $value;
+		foreach ($list as $key => $filename) {
+			return $filename;
 		}
 	}
 
