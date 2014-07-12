@@ -39,7 +39,8 @@ class AssHat{
 	{
 		$content = file_get_contents($this->getFile());
 		$modfile = rtrim($content);
-		file_put_contents($this->getFile(), $modfile);
+		$options = stream_context_create(array('file' => array('overwrite' => true)));
+		file_put_contents($this->getFile(), $modfile, 0, $options);
 	}
 
 }
