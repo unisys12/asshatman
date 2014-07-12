@@ -39,9 +39,6 @@ class AssHat{
 	public function modifyFile()
 	{
 		return file_get_contents($this->getFile());
-		//$modfile = rtrim($content);
-		//$options = stream_context_create(array('file' => array('overwrite' => true)));
-		//rtrim(file_put_contents($this->publicdir . 'style.css', $content, 0, $options));
 	}
 
 	public function removeSpaces()
