@@ -8,7 +8,7 @@ php:
 before_script:
   - composer self-update
   - composer dump-autoload -o
-  - chmod 777 tests/travis_enviro.sh
+  - chmod 777 $HOME/tests/travis_enviro.sh
   - tests/travis_enviro.sh
 
 script: phpunit
