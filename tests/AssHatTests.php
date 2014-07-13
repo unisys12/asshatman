@@ -33,7 +33,7 @@ class AssHatTests extends PHPUnit_Framework_TestCase{
 
 	public function testAlteringAFileAndReturningThatFile()
 	{
-		$ex = $this->file->modifyFile();
+		$ex = $this->file->getFile();
 		$this->assertNotFalse($ex);
 	}
 

@@ -23,16 +23,19 @@ class AssHat{
 		return $files;
 	}
 
-	public function modifyFile()
+	public function getFile()
 	{
-		foreach ($this->fileList() as $file) {
-			return file_get_contents($file);
+		$list = $this->fileList();
+		foreach ($list as $key => $file) {
+			$content[$key] = file_get_contents($file);
 		}
+
+		return $content;
 	}
 
 	public function removeSpaces()
 	{
-		return preg_replace('/\s+/', '', $this->modifyFile());
+		return preg_replace('/\s+/', '', $this->getFile());
 	}
 
 	public function saveFile()
