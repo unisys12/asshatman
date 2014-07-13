@@ -6,6 +6,8 @@ php:
   - "hhvm"
 
 before_script:
+  - composer self-update
   - composer dump-autoload -o
+  - tests/travis_enviro.sh
 
 script: phpunit
