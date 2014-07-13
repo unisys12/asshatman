@@ -25,18 +25,6 @@ class AssHatTests extends PHPUnit_Framework_TestCase{
 		$this->assertArrayHasKey('1', $listing);
 	}
 
-	public function testRetrieveingAListOfFiles()
-	{	
-		$ex = $this->file->getFile();
-		$this->assertContains('test.css', $ex);
-	}
-
-	public function testOpeningFile()
-	{
-		$ex = $this->file->openFile();
-		$this->assertNotFalse($ex);
-	}
-
 	public function testRemovelyOfSpacesFromFile()
 	{
 		$ex = $this->file->removeSpaces();

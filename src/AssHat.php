@@ -15,30 +15,19 @@ class AssHat{
 		$files = [];
 		$list = new DirectoryIterator($this->builddir);
 
-		foreach ($list as $singlefile) {
+		foreach ($list as $key => $singlefile) {
 			if($singlefile->isDot()) continue;
-			$files[] =  $singlefile->getFilename();
+			$files[] = $singlefile->getPathname();
 		}	
 
 		return $files;
 	}
 
-	public function getFile()
-	{
-		foreach ($this->fileList() as $files) {
-			$file = $this->builddir . '/' . $files;
-			return $file;
-		}		
-	}
-
-	public function openFile()
-	{		
-		return fopen($this->getFile(), 'w+');
-	}
-
 	public function modifyFile()
 	{
-		return file_get_contents($this->getFile());
+		foreach ($this->fileList() as $file) {
+			return file_get_contents($file);
+		}
 	}
 
 	public function removeSpaces()
