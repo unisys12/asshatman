@@ -8,11 +8,11 @@ php:
 before_script:
   - composer self-update
   - composer dump-autoload -o
-  - mkdir public/css/
-  - touch build/css/test1.css
+  - sudo mkdir public/css/
+  - sudo touch build/css/test1.css
 
 script: phpunit
 
 after_script:
-  - rm -rf public/css
-  - rm -rf build/css
+  - sudo rm -rf public/css
+  - sudo rm -rf build/css
