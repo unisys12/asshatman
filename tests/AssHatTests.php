@@ -4,6 +4,14 @@ use PhillipJackson\AssHatMan\AssHat;
 
 class AssHatTests extends PHPUnit_Framework_TestCase{
 
+	public function setUp()
+	{
+		$dirtosave = __DIR__ . '/../public/css';
+		$dirtocheck = __DIR__ . '/../build/css';
+		
+		$this->file = new AssHat($dirtocheck,$dirtosave);
+	}
+
 	public function testRetrieveingConfigOptions()
 	{
 		$dir = __DIR__ . '/../public/config.php';
@@ -13,57 +21,37 @@ class AssHatTests extends PHPUnit_Framework_TestCase{
 
 	public function testThatWeCanScanAGivenDirectory()
 	{
-		$dirtosave = __DIR__ . '/../public/css';
-		$dirtocheck = __DIR__ . '/../build/css';
-		
-		$file = new AssHat($dirtocheck,$dirtosave);
-		$listing = $file->fileList();
+		$listing = $this->file->fileList();
 		$this->assertArrayHasKey('1', $listing);
 	}
 
 	public function testRetrieveingAListOfFiles()
-	{		
-		$dirtosave = __DIR__ . '/../public/css';
-		$dirtocheck = __DIR__ . '/../build/css';
-
-		$files = new AssHat($dirtocheck,$dirtosave);
-		$ex = $files->getFile();
+	{	
+		$ex = $this->file->getFile();
 		$this->assertContains('test.css', $ex);
 	}
 
 	public function testOpeningFile()
-	{		
-		$dirtosave = __DIR__ . '/../public/css';
-		$dirtocheck = __DIR__ . '/../build/css';
-		$file = new AssHat($dirtocheck,$dirtosave);
-		$ex = $file->openFile();
+	{
+		$ex = $this->file->openFile();
 		$this->assertNotFalse($ex);
 	}
 
 	public function testRemovelyOfSpacesFromFile()
 	{
-		$dirtosave = __DIR__ . '/../public/css';
-		$dirtocheck = __DIR__ . '/../build/css/';
-		$file = new AssHat($dirtocheck,$dirtosave);
-		$ex = $file->removeSpaces();
+		$ex = $this->file->removeSpaces();
 		$this->assertNotFalse('$ex');
 	}
 
 	public function testAlteringAFileAndReturningThatFile()
 	{
-		$dirtosave = __DIR__ . '/../public/css';
-		$dirtocheck = __DIR__ . '/../build/css/';
-		$file = new AssHat($dirtocheck,$dirtosave);
-		$ex = $file->modifyFile();
+		$ex = $this->file->modifyFile();
 		$this->assertNotFalse($ex);
 	}
 
 	public function testThatNewFileIsSavedInPublicDirectory()
 	{
-		$dirtosave = __DIR__ . '/../public/css';
-		$dirtocheck = __DIR__ . '/../build/css/';
-		$file = new AssHat($dirtocheck,$dirtosave);
-		$ex = $file->saveFile();
+		$ex = $this->file->saveFile();
 		$this->assertNotFalse($ex);
 	}
 }
