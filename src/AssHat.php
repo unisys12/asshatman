@@ -30,7 +30,7 @@ class AssHat{
 			$content[$key] = file_get_contents($file);
 		}
 
-		return $content;
+		return $content[$key];
 	}
 
 	public function removeSpaces()
