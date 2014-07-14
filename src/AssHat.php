@@ -12,7 +12,6 @@ class AssHat{
 
 	public function fileList()
 	{
-		$files = [];
 		$list = new DirectoryIterator($this->builddir);
 
 		foreach ($list as $key => $singlefile) {
@@ -30,7 +29,7 @@ class AssHat{
 			$content[$key] = file_get_contents($file);
 		}
 
-		return $content[$key];
+		return $content;
 	}
 
 	public function removeSpaces()
