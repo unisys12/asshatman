@@ -11,7 +11,7 @@ before_script:
   - mkdir -p public/css
   - mkdir -p build/css && cd build/css curl -Lk https://gist.githubusercontent.com/unisys12/fd42d98347079a57c5e6/raw/d14d4d0c10ca2c44a7da254adab7781cef112a27/vertical-carousel.scss > test.css
 
-script: phpunit
+script: phpunit -c phpunit.xml
 
 after_script:
   - rm -rf public/css
