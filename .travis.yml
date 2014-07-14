@@ -10,9 +10,9 @@ before_script:
   - composer dump-autoload -o
   - mkdir -p public/css
   - mkdir -p build/css && cd build/css curl -Lk https://gist.githubusercontent.com/unisys12/fd42d98347079a57c5e6/raw/d14d4d0c10ca2c44a7da254adab7781cef112a27/vertical-carousel.scss > test.css
-  - cd ..
+  - cd $TRAVIS_BUILD_DIR
 
-script: phpunit tests/AssHatTests.php
+script: phpunit
 
 after_script:
   - rm -rf public/css
