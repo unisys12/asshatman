@@ -8,7 +8,7 @@ before_script:
   - composer self-update
   - composer dump-autoload -o
   - mkdir -p public/css 
-  - cd /public 
+  - cd public 
   - curl -Lk https://gist.githubusercontent.com/unisys12/6b57fcb318317d0716ca/raw/6a300007c95ab438a38f0996ed3c1e6b64a8c183/gistfile1.txt > config.php
   - cd ..
   - mkdir -p build/css 
