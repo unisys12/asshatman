@@ -9,7 +9,7 @@ class AssHatTests extends PHPUnit_Framework_TestCase{
 		$dirtosave = __DIR__ . '/../public/css';
 		$dirtocheck = __DIR__ . '/../build/css';
 		
-		$this->file = new AssHat($dirtocheck,$dirtosave);
+		$this->file = new AssHat($dirtocheck, $dirtosave);
 	}
 
 	public function testRetrieveingConfigOptions()
@@ -25,7 +25,7 @@ class AssHatTests extends PHPUnit_Framework_TestCase{
 		$dirtosave = __DIR__ . '/../public/css';
 		$dirtocheck = __DIR__ . '/../build/css';
 		
-		$dirCheck = new AssHat($dirtocheck,$dirtosave);
+		$dirCheck = new AssHat($dirtocheck, $dirtosave);
 		$this->assertArrayHasKey('1', $dirCheck);
 	}
 
