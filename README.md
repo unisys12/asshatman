@@ -1,4 +1,4 @@
-AssHatMan
+AssHatMan [![Build Status](https://travis-ci.org/unisys12/asshatman.svg?branch=master)](https://travis-ci.org/unisys12/asshatman)
 =========
 
 Simple project to teach myself TDD and a good excuse to build a asset management package using PHP. Not to be used in a real project.
