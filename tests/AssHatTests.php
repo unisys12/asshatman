@@ -21,7 +21,7 @@ class AssHatTests extends PHPUnit_Framework_TestCase{
 
 	public function testThatWeCanScanAGivenDirectory()
 	{
-		$this->assertArrayHasKey('1', $this->file->fileList());
+		$this->assertArrayHasKey('0', $this->file->fileList());
 	}
 
 	public function testRemovelyOfSpacesFromFile()
